@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../ParseStarterProject/BasicInfoViewController.swift">
+   </FileRef>
+   <FileRef
       location = "self:/Users/Stylebar/Downloads/Instagram/CMPE 131 Project.xcodeproj">
    </FileRef>
 </Workspace>
