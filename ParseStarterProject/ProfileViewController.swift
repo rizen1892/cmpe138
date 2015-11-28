@@ -14,24 +14,31 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var shirtSize: UITextField!
     @IBOutlet weak var PantSize: UITextField!
     @IBOutlet weak var ShoeSize: UITextField!
     
- 
+    @IBOutlet weak var brandName: UITextField!
+    @IBOutlet weak var material: UITextField!
+    @IBOutlet weak var color: UITextField!
+    @IBOutlet weak var shirtSize: UITextField!
+    @IBOutlet weak var season: UITextField!
+    @IBOutlet weak var budget: UITextField!
+    
+    
+    
+    
+    
+    
     
     @IBOutlet weak var profilePic: UIImageView!
 
-    @IBAction func AddProfilePic(sender: AnyObject) {
-    
+    @IBAction func addProfilePicture(sender: AnyObject) {
         var image = UIImagePickerController()
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         image.allowsEditing = false
         
         self.presentViewController(image, animated: true, completion: nil)
-    
-    
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
@@ -48,17 +55,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         user?.saveInBackground()
         
         
-    }
-    
-    @IBAction func logoutButton(sender: AnyObject) {
-        
-        PFUser.logOut()
-        
-        var currentUser = PFUser.currentUser()
-        currentUser = nil
-        if currentUser == nil {
-        self.dismissViewControllerAnimated(true, completion:nil)
-    }
     }
     
     
@@ -80,22 +76,28 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     
     @IBAction func SaveSizes(sender: AnyObject) {
         
-        if (shirtSize.text == "" || PantSize.text == "" || ShoeSize.text == "" ){
+        if (shirtSize.text == "" || brandName.text == "" || material.text == "" || color.text == "" || season.text == "" || budget.text == ""  ){
             
-            displayAlert("Error in form", message: "Please enter the sizes")
+            displayAlert("Error in form", message: "Please enter all the information")
             
         }
-        
-        if let currentUser = PFUser.currentUser(){
-            currentUser["shirtSize"] = shirtSize.text
-            currentUser["pantSize"] = PantSize.text
-            currentUser["shoeSize"] = ShoeSize.text
+        else{
+            var currentUser = PFObject(className: "Preference")
+                currentUser["Name"] = PFUser.currentUser()!.objectId!
+                currentUser["shirtSize"] = shirtSize.text
+                currentUser["preferredBrand"] = brandName.text
+                currentUser["preferredMaterial"] = material.text
+                currentUser["budget"] = budget.text
+                currentUser["favoriteColor"] = color.text
+                currentUser["preferredSeason"] = season.text
             
-            //set other fields the same way....
-            currentUser.saveInBackground()
+                //set other fields the same way....
+                currentUser.saveInBackground()
+                
+                displayAlert("Saved", message: "Your Preference has been updated.")
+                
             
-            displayAlert("Saved", message: "Your information has been updated.")
-            
+
         }
         
     }
@@ -111,9 +113,36 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var query = PFUser.query()
+        var query = PFQuery(className:"Preference")
+        var name = PFUser.currentUser()!.objectId!
+        query.whereKey("Name", equalTo:name)
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            
+            if error == nil{
+                if let objects = objects{
+                    if name != ""{
+                    for object in objects{
+       
+                        self.shirtSize.placeholder = object["shirtSize"] as! String?
+                self.material.placeholder = object["preferredMaterial"] as! String?
+               self.brandName.placeholder = object["preferredBrand"] as! String?
+               self.color.placeholder = object["favoriteColor"] as! String?
+               self.budget.placeholder =  object["budget"] as! String?
+                self.season.placeholder = object["preferredSeason"] as! String?
+
+                    }
+                }
+            }
+            }
+             else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        var query2 = PFUser.query()
         
-        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+        query2?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             
             if let users = objects {
                 
@@ -134,9 +163,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             }
             
             if let currentUser = PFUser.currentUser(){
-                self.shirtSize.placeholder = currentUser["shirtSize"] as! String?
-                self.PantSize.placeholder =  currentUser["pantSize"] as! String?
-                self.ShoeSize.placeholder = currentUser["shoeSize"] as! String?
 
                 if (currentUser["profilePicture"] != nil){
                 

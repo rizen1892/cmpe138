@@ -10,9 +10,11 @@
 		5F5343E51C0406D300FC6E98 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F5343E41C0406D300FC6E98 /* 1.jpg */; };
 		5F5343E71C040A1B00FC6E98 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F5343E61C040A1B00FC6E98 /* 2.jpg */; };
 		5F627ED31BF11FB900CB3E83 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F627ED21BF11FB900CB3E83 /* ProfileViewController.swift */; };
+		5FA14E461C076E9A00830E82 /* BasicInfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA14E451C076E9A00830E82 /* BasicInfoViewController2.swift */; };
 		5FB443041BF18162001FD499 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB443031BF18162001FD499 /* heart.png */; };
 		5FB443061BF18267001FD499 /* heart1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB443051BF18267001FD499 /* heart1.png */; };
 		5FECD8871BF18A7400D6D274 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FECD8861BF18A7400D6D274 /* FavoriteTableViewController.swift */; };
+		5FF681141C0783E200DCA1D6 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF681131C0783E200DCA1D6 /* CompanyViewController.swift */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
 		81BA81501A49DA1800E65899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA814E1A49DA1800E65899 /* Main.storyboard */; };
@@ -38,9 +40,11 @@
 		5F5343E41C0406D300FC6E98 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		5F5343E61C040A1B00FC6E98 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		5F627ED21BF11FB900CB3E83 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5FA14E451C076E9A00830E82 /* BasicInfoViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController2.swift; sourceTree = "<group>"; };
 		5FB443031BF18162001FD499 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		5FB443051BF18267001FD499 /* heart1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart1.png; sourceTree = "<group>"; };
 		5FECD8861BF18A7400D6D274 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		5FF681131C0783E200DCA1D6 /* CompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* CMPE 131 Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMPE 131 Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA81491A49DA1800E65899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +119,9 @@
 				5F5343E61C040A1B00FC6E98 /* 2.jpg */,
 				5FECD8861BF18A7400D6D274 /* FavoriteTableViewController.swift */,
 				5F627ED21BF11FB900CB3E83 /* ProfileViewController.swift */,
+				5FF681131C0783E200DCA1D6 /* CompanyViewController.swift */,
 				C8DA3E921B0B4EC100B41012 /* TableViewController.swift */,
+				5FA14E451C076E9A00830E82 /* BasicInfoViewController2.swift */,
 				81BA814E1A49DA1800E65899 /* Main.storyboard */,
 				C8DA3E9A1B0B9C3B00B41012 /* FeedTableViewController.swift */,
 				C8DA3E981B0B9B4500B41012 /* cell.swift */,
@@ -253,8 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DA3E971B0B83ED00B41012 /* PostImageViewController.swift in Sources */,
+				5FA14E461C076E9A00830E82 /* BasicInfoViewController2.swift in Sources */,
 				5FECD8871BF18A7400D6D274 /* FavoriteTableViewController.swift in Sources */,
 				C8DA3E9B1B0B9C3B00B41012 /* FeedTableViewController.swift in Sources */,
+				5FF681141C0783E200DCA1D6 /* CompanyViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				C8DA3E931B0B4EC100B41012 /* TableViewController.swift in Sources */,
 				5F627ED31BF11FB900CB3E83 /* ProfileViewController.swift in Sources */,

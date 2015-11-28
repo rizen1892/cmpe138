@@ -1,15 +1,15 @@
-//
-//  PostImageViewController.swift
-//  ParseStarterProject
-//
-//  Created by Rob Percival on 19/05/2015.
-//  Copyright (c) 2015 Parse. All rights reserved.
-//
+
 
 import UIKit
 import Parse
 
 class PostImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    
+    
+    
+    
+    
     
     func displayAlert(title: String, message: String) {
         
@@ -28,6 +28,9 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
     var activityIndicator = UIActivityIndicatorView()
 
     @IBOutlet var imageToPost: UIImageView!
+    @IBOutlet weak var shirtColor: UITextField!
+    @IBOutlet weak var shirtMaterial: UITextField!
+    @IBOutlet weak var shirtSize: UITextField!
     
     @IBAction func chooseImage(sender: AnyObject) {
         
@@ -63,11 +66,15 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
         
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
-        var post = PFObject(className: "Post")
+        var post = PFObject(className: "Clothes")
         
-        post["message"] = message.text
+        post["Cost"] = message.text
+        post["Color"] = shirtColor.text
+        post["Material"] = shirtMaterial.text
+        post["Size"] = shirtSize.text
         
         post["userId"] = PFUser.currentUser()!.objectId!
+        
         
         let imageData = UIImagePNGRepresentation(imageToPost.image)
         

@@ -1,10 +1,4 @@
-//
-//  TableViewController.swift
-//  ParseStarterProject
-//
-//  Created by Rob Percival on 19/05/2015.
-//  Copyright (c) 2015 Parse. All rights reserved.
-//
+
 
 import UIKit
 import Parse
@@ -18,6 +12,7 @@ class TableViewController: UITableViewController {
     var refresher: UIRefreshControl!
     
     func refresh() {
+        
         
         var query = PFUser.query()
         

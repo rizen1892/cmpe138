@@ -1,10 +1,4 @@
-//
-//  FeedTableViewController.swift
-//  ParseStarterProject
-//
-//  Created by Rob Percival on 19/05/2015.
-//  Copyright (c) 2015 Parse. All rights reserved.
-//
+
 
 import UIKit
 import Parse
@@ -40,6 +34,10 @@ class FeedTableViewController: UITableViewController {
     
     
     var messages = [String]()
+    var shirtSize = [String]()
+    var color = [String]()
+    var material = [String]()
+    
     var usernames = [String]()
     var imageFiles = [PFFile]()
     var users = [String: String]()
@@ -58,7 +56,10 @@ class FeedTableViewController: UITableViewController {
             if let users = objects {
                 
                 self.messages.removeAll(keepCapacity: true)
+                self.shirtSize.removeAll(keepCapacity: true)
                 self.users.removeAll(keepCapacity: true)
+                self.color.removeAll(keepCapacity: true)
+                self.material.removeAll(keepCapacity: true)
                 self.imageFiles.removeAll(keepCapacity: true)
                 self.usernames.removeAll(keepCapacity: true)
                 
@@ -85,7 +86,7 @@ class FeedTableViewController: UITableViewController {
                     
                     var followedUser = object["following"] as! String
                     
-                    var query = PFQuery(className: "Post")
+                    var query = PFQuery(className: "Clothes")
                     
                     query.whereKey("userId", equalTo: followedUser)
                     
@@ -95,7 +96,11 @@ class FeedTableViewController: UITableViewController {
                             
                             for object in objects {
                                 
-                                self.messages.append(object["message"] as! String)
+                                self.messages.append(object["Cost"] as! String)
+                                self.shirtSize.append(object["Size"] as! String)
+                                self.color.append(object["Color"] as! String)
+                                self.material.append(object["Material"] as! String)
+                                
                                 
                                 self.imageFiles.append(object["imageFile"] as! PFFile)
                                 
@@ -145,6 +150,9 @@ class FeedTableViewController: UITableViewController {
         }
         myCell.username.text = usernames[indexPath.row]
         myCell.message.text = messages[indexPath.row]
+        myCell.shirtSize.text = shirtSize[indexPath.row]
+         myCell.color.text = color[indexPath.row]
+         myCell.material.text = material[indexPath.row]
         return myCell
     }
     
