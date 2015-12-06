@@ -30,7 +30,7 @@ class CompanyViewController: UIViewController {
     @IBAction func SaveCompany(sender: AnyObject) {
         if (addLocation.text == ""){
             
-            displayAlert("Error in form", message: "Please enter all thei information")
+            displayAlert("Error in form", message: "Please enter all the information")
             
         }
         else{
@@ -42,6 +42,7 @@ class CompanyViewController: UIViewController {
                 company.saveInBackground()
                 
                 displayAlert("Saved", message: "Your information has been updated.")
+                println("Company have been saved.")
                 
             }
         

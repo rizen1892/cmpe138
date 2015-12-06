@@ -149,6 +149,8 @@ class TableViewController: UITableViewController {
             isFollowing[followedObjectId] = true
         
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            
+            println("User has followed " + userids[indexPath.row])
         
             var following = PFObject(className: "followers")
             following["following"] = userids[indexPath.row]
@@ -161,6 +163,8 @@ class TableViewController: UITableViewController {
             isFollowing[followedObjectId] = false
             
             cell.accessoryType = UITableViewCellAccessoryType.None
+            
+            println("User has unfollowed " + userids[indexPath.row])
             
             var query = PFQuery(className: "followers")
             

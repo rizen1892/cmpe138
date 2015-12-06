@@ -75,6 +75,7 @@ class ViewController: UIViewController{
                     
                     // Signup successful
                     
+                    println("User has Signed up and has been logged in.")
                     self.performSegueWithIdentifier("login", sender: self)
                     
                     
@@ -102,7 +103,7 @@ class ViewController: UIViewController{
                     if user != nil {
                         
                         // Logged In!
-                        
+                        println("User has logged in.")
                         self.performSegueWithIdentifier("login", sender: self)
                         
                         

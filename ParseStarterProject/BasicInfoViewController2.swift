@@ -14,7 +14,7 @@ class BasicInfoViewController2: UIViewController {
     
     @IBAction func logoutButton(sender: AnyObject) {
         PFUser.logOut()
-        
+        println("User has logged out.")
         var currentUser = PFUser.currentUser()
         currentUser = nil
         if currentUser == nil {
@@ -48,6 +48,7 @@ class BasicInfoViewController2: UIViewController {
         }
         else{
         if let currentUser = PFUser.currentUser(){
+            
             currentUser["CardNumber"] = cardNumber.text
             currentUser["Street"] = street.text
             currentUser["City"] = city.text
@@ -57,6 +58,7 @@ class BasicInfoViewController2: UIViewController {
             count = 1;
             //set other fields the same way....
             currentUser.saveInBackground()
+            println("User's basic information has beed saved")
             
             displayAlert("Saved", message: "Your information has been updated.")
             

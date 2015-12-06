@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "81BA81441A49DA1800E65899"
-               BuildableName = "CMPE 131 Project.app"
-               BlueprintName = "CMPE 131 Project"
-               ReferencedContainer = "container:CMPE 131 Project.xcodeproj">
+               BuildableName = "StyleIt.app"
+               BlueprintName = "StyleIt"
+               ReferencedContainer = "container:StyleIt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81BA81441A49DA1800E65899"
-            BuildableName = "CMPE 131 Project.app"
-            BlueprintName = "CMPE 131 Project"
-            ReferencedContainer = "container:CMPE 131 Project.xcodeproj">
+            BuildableName = "StyleIt.app"
+            BlueprintName = "StyleIt"
+            ReferencedContainer = "container:StyleIt.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81BA81441A49DA1800E65899"
-            BuildableName = "CMPE 131 Project.app"
-            BlueprintName = "CMPE 131 Project"
-            ReferencedContainer = "container:CMPE 131 Project.xcodeproj">
+            BuildableName = "StyleIt.app"
+            BlueprintName = "StyleIt"
+            ReferencedContainer = "container:StyleIt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81BA81441A49DA1800E65899"
-            BuildableName = "CMPE 131 Project.app"
-            BlueprintName = "CMPE 131 Project"
-            ReferencedContainer = "container:CMPE 131 Project.xcodeproj">
+            BuildableName = "StyleIt.app"
+            BlueprintName = "StyleIt"
+            ReferencedContainer = "container:StyleIt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

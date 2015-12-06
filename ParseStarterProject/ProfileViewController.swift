@@ -14,8 +14,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var PantSize: UITextField!
-    @IBOutlet weak var ShoeSize: UITextField!
+    
     
     @IBOutlet weak var brandName: UITextField!
     @IBOutlet weak var material: UITextField!
@@ -95,7 +94,8 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 currentUser.saveInBackground()
                 
                 displayAlert("Saved", message: "Your Preference has been updated.")
-                
+            
+                println("User's Preferred Style has been updated.")
             
 
         }

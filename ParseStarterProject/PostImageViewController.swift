@@ -4,12 +4,6 @@ import UIKit
 import Parse
 
 class PostImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-    
-    
-    
-    
-    
     
     func displayAlert(title: String, message: String) {
         
